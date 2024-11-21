@@ -27,7 +27,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="section bg-gradient-to-r  from-black to-emerald-900  p-8 pt-60 pb-40" id='about'>
+      <div className="section bg-gradient-to-r  from-black to-emerald-900   pt-60 pb-40" id='about'>
       <div className='absolute flex  w-full h-screen'>
           <img src={Leaf} alt="Leaf" className=' z-20 w-[100%] md:w-[50%] h-screen' />
           <img src={Leaf} alt="Leaf" className='z-30 w-[50%] h-screen hidden md:block' />
@@ -50,7 +50,7 @@ function Home() {
         <Works />
       </div>
       <div>
-        {/* <Three /> */}
+        <Three />
       </div>
     </div>
   );

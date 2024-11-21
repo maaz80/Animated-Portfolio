@@ -5,7 +5,7 @@ import AnimatedCursor from 'react-animated-cursor'
 
 function App() {
   return (
-    <div className='bg-gradient-to-r from-black to-emerald-900 h-screen poppins-regular'>
+    <div className='bg-gradient-to-r from-black to-emerald-900 h-screen poppins-regular w-full'>
    
       <AnimatedCursor
       innerSize={28}

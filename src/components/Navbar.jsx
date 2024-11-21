@@ -4,36 +4,36 @@ function Navbar() {
     const navItems = ["Home", "About", "Visitor", "Search", "Profile"];
     const containerRef = useRef(null);
 
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            const items = containerRef.current.querySelectorAll(".magnetic-item");
+    // useEffect(() => {
+    //     const handleMouseMove = (e) => {
+    //         const items = containerRef.current.querySelectorAll(".magnetic-item");
 
-            items.forEach((item) => {
-                const rect = item.getBoundingClientRect();
-                const itemCenterX = rect.left + rect.width / 2;
-                const itemCenterY = rect.top + rect.height / 2;
+    //         items.forEach((item) => {
+    //             const rect = item.getBoundingClientRect();
+    //             const itemCenterX = rect.left + rect.width / 2;
+    //             const itemCenterY = rect.top + rect.height / 2;
 
-                const distanceX = e.clientX - itemCenterX;
-                const distanceY = e.clientY - itemCenterY;
+    //             const distanceX = e.clientX - itemCenterX;
+    //             const distanceY = e.clientY - itemCenterY;
 
-                const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+    //             const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
 
-                const maxDistance = 150; // Define range for magnetic pull
-                if (distance < maxDistance) {
-                    const pullStrength = 1 - distance / maxDistance; // Calculate strength based on proximity
-                    const offsetX = distanceX * pullStrength * 0.4; // Adjust multiplier for effect
-                    const offsetY = distanceY * pullStrength * 0.4;
+    //             const maxDistance = 150; // Define range for magnetic pull
+    //             if (distance < maxDistance) {
+    //                 const pullStrength = 1 - distance / maxDistance; // Calculate strength based on proximity
+    //                 const offsetX = distanceX * pullStrength * 0.4; // Adjust multiplier for effect
+    //                 const offsetY = distanceY * pullStrength * 0.4;
 
-                    item.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-                } else {
-                    item.style.transform = ""; // Reset when out of range
-                }
-            });
-        };
+    //                 item.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    //             } else {
+    //                 item.style.transform = ""; // Reset when out of range
+    //             }
+    //         });
+    //     };
 
-        document.addEventListener("mousemove", handleMouseMove);
-        return () => document.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+    //     document.addEventListener("mousemove", handleMouseMove);
+    //     return () => document.removeEventListener("mousemove", handleMouseMove);
+    // }, []);
 
     return (
         <div
