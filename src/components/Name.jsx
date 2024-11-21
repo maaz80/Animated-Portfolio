@@ -1,12 +1,32 @@
 import { motion } from "framer-motion";
-
 import { styles } from "./styles";
+import TextPlugin from "gsap/TextPlugin";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(TextPlugin);
 
 const Name = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const text = textRef.current.innerText;
+    textRef.current.innerText = '';
+
+    gsap.to(textRef.current, {
+      duration: text.length * 1,
+      text: text,
+      opacity:1,
+      ease: 'slow',
+      repeat: -1,
+      repeatDelay: 2,
+    });
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[40%]  max-w-7xl mx-2 md:mx-20 ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[40%] max-w-7xl mx-2 md:mx-20 ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-emerald-600' />
@@ -15,15 +35,14 @@ const Name = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-emerald-800 '>Maaz</span>
+            Hi, I'm <span className='text-emerald-600 opacity-0' ref={textRef}>Maaz</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I Am A FrontEnd Developer, worked  <br className='sm:block hidden' />
+          <p className={`${styles.heroSubText} mt-2 text-white-100` } >
+            I Am A FrontEnd Developer, worked <br className='sm:block hidden' />
             with API's, Design and Animations.
           </p>
         </div>
       </div>
-
 
       <div className='absolute xs:bottom-10 bottom-20 w-full flex justify-center items-center z-40'>
         <a href='#about'>

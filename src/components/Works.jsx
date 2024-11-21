@@ -1,12 +1,17 @@
-import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
 import { styles } from "./styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Register the TextPlugin with GSAP
+gsap.registerPlugin(TextPlugin ,ScrollTrigger);
 
 const ProjectCard = ({
   index,
@@ -68,6 +73,25 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const text = textRef.current.innerText;
+    textRef.current.innerText = '';
+
+    gsap.to(textRef.current, {
+      duration: text.length * 0.1,
+      text: text,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none none',
+      },
+    });
+  }, []);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -75,16 +99,13 @@ const Works = () => {
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-white  text-[17px] max-w-3xl leading-[30px]'
-        >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+      <div className='w-full flex'> 
+        <motion.p 
+          variants={fadeIn("", "", 0.1, 1)} 
+          className='mt-3 text-white text-[17px] max-w-3xl leading-[30px]' 
+          ref={textRef}
+        > 
+          Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively. 
         </motion.p>
       </div>
 

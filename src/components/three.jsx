@@ -72,7 +72,7 @@ const Three = () => {
       },
       {
         id: 'empty',
-        position: { x: 0, y: -1, z: 8 },
+        position: { x: 0, y: -1, z: 6 },
         rotation: { x: 0, y: -0.5, z: 0 },
       },
       {
@@ -80,11 +80,6 @@ const Three = () => {
         position: { x: -2, y: -1, z: -5 },
         rotation: { x: 0, y: 0.5, z: 0 },
       },
-      // {
-      //   id: 'tech',
-      //   position: { x: -2, y: -1, z: -5 },
-      //   rotation: { x: 0, y: 0.5, z: 0 },
-      // },
       {
         id: 'experience',
         position: { x: 1.4, y: -1, z: -3 },
@@ -94,6 +89,21 @@ const Three = () => {
         id: 'works',
         position: { x: 1.4, y: -1, z: -3 },
         rotation: { x: 0.3, y: -0.5, z: 0 },
+      },
+      {
+      id: 'tech',
+      position: { x: -2, y: -1, z: -5 },
+        rotation: { x: 0, y: 0.5, z: 0 },
+      },
+      {
+      id: 'eyes',
+      position: { x: -2, y: -1, z: -5 },
+        rotation: { x: 0, y: 0.5, z: 0 },
+      },
+      {
+      id: 'contact',
+      position: { x: -2, y: -1, z: -5 },
+        rotation: { x: 0, y: 0.5, z: 0 },
       },
     ];
 
@@ -125,11 +135,13 @@ const Three = () => {
           duration: 3,
           ease: "power1.out"
         });
-        // Smoothly hide the container on the 'tech' section
-        if (currentSection === 'works') {
+        // Hide the container on the sections
+        if (currentSection === 'works' || currentSection === 'tech' || currentSection === 'eyes') {
           gsap.to(containerRef.current, {
             opacity: 0,
             duration: 1,
+            transition:true,
+            ease:'circ.inOut',
             onComplete: () => {
               containerRef.current.style.display = 'none';
             },
@@ -139,6 +151,8 @@ const Three = () => {
           gsap.to(containerRef.current, {
             opacity: 1,
             duration: 1,
+            transition:true,
+            ease:'circ.inOut',
           });
         }
       }
