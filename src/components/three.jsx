@@ -64,58 +64,46 @@ const Three = () => {
     };
     reRender3D();
 
-    const arrPositionModel = [
-      {
-        id: 'home',
-        position: { x: 1, y: -1, z: 0 },
-        rotation: { x: 0, y: -1.5, z: 0 }
-      },
-      {
-        id: 'empty',
-        position: { x: 0, y: -1, z: 6 },
-        rotation: { x: 0, y: -0.5, z: 0 },
-      },
-      {
-        id: 'about',
-        position: { x: -2, y: -1, z: -5 },
-        rotation: { x: 0, y: 0.5, z: 0 },
-      },
-      {
-        id: 'experience',
-        position: { x: 1.4, y: -1, z: -3 },
-        rotation: { x: 0.3, y: -0.5, z: 0 },
-      },
-      {
-        id: 'works',
-        position: { x: 1.4, y: -1, z: -3 },
-        rotation: { x: 0.3, y: -0.5, z: 0 },
-      },
-      {
-      id: 'tech',
-      position: { x: -2, y: -1, z: -5 },
-        rotation: { x: 0, y: 0.5, z: 0 },
-      },
-      {
-      id: 'eyes',
-      position: { x: -2, y: -1, z: -5 },
-        rotation: { x: 0, y: 0.5, z: 0 },
-      },
-      {
-      id: 'contact',
-      position: { x: -2, y: -1, z: -5 },
-        rotation: { x: 0, y: 0.5, z: 0 },
-      },
+    // Positions and rotations for desktop
+    const desktopPositions = [
+      { id: 'home', position: { x: 1, y: -1, z: 0 }, rotation: { x: 0, y: -1.5, z: 0 } },
+      { id: 'empty', position: { x: 0, y: -1, z: 6 }, rotation: { x: 0, y: -0.5, z: 0 } },
+      { id: 'about', position: { x: -2, y: -1, z: -5 }, rotation: { x: 0, y: 0.5, z: 0 } },
+      { id: 'experience', position: { x: 1.4, y: -1, z: -3 }, rotation: { x: 0.3, y: -0.5, z: 0 } },
+      { id: 'works', position: { x: 1.4, y: -1, z: -3 }, rotation: { x: 0.3, y: -0.5, z: 0 } },
+      { id: 'tech', position: { x: -2, y: -1, z: -5 }, rotation: { x: 0, y: 0.5, z: 0 } },
+      { id: 'eyes', position: { x: -2, y: -1, z: -5 }, rotation: { x: 0, y: 0.5, z: 0 } },
+      { id: 'contact', position: { x: -2, y: -1, z: -5 }, rotation: { x: 0, y: 0.5, z: 0 } },
     ];
+
+    // Positions and rotations for mobile
+    const mobilePositions = [
+      { id: 'home', position: { x: 0.3, y: -0.2, z: -7 }, rotation: { x: 0, y: -1, z: 0 } },
+      { id: 'empty', position: { x: 0, y: -0.5, z: -4 }, rotation: { x: 0, y: -0.25, z: 0 } },
+      { id: 'about', position: { x: 0, y: -0.1, z: -2 }, rotation: { x: 0, y: 0.25, z: 0 } },
+      { id: 'experience', position: { x: 0.7, y: -0.5, z: -1.5 }, rotation: { x: 0.15, y: -0.25, z: 0 } },
+      { id: 'works', position: { x: 0.7, y: -0.5, z: -1.5 }, rotation: { x: 0.15, y: -0.25, z: 0 } },
+      { id: 'tech', position: { x: -1, y: -0.5, z: -2 }, rotation: { x: 0, y: 0.25, z: 0 } },
+      { id: 'eyes', position: { x: -1, y: -0.5, z: -2 }, rotation: { x: 0, y: 0.25, z: 0 } },
+      { id: 'contact', position: { x: -1, y: -0.5, z: -2 }, rotation: { x: 0, y: 0.25, z: 0 } },
+    ];
+
+    const arrPositionModel = window.innerWidth <= 768 ? mobilePositions : desktopPositions;
 
     const modelMove = () => {
       const sections = document.querySelectorAll('.section');
       let currentSection;
+      const viewportHeight = window.innerHeight;
+
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 3) {
+        const sectionHeight = rect.height;
+
+        if (rect.top <= viewportHeight * 0.5 && rect.bottom >= viewportHeight * 0.5) {
           currentSection = section.id;
         }
       });
+
       const position_active = arrPositionModel.findIndex(
         (val) => val.id === currentSection
       );
@@ -136,12 +124,12 @@ const Three = () => {
           ease: "power1.out"
         });
         // Hide the container on the sections
-        if (currentSection === 'works' || currentSection === 'tech' || currentSection === 'eyes') {
+        if (currentSection === 'works' || currentSection === 'tech' || currentSection === 'eyes' || currentSection === 'contact') {
           gsap.to(containerRef.current, {
             opacity: 0,
             duration: 1,
-            transition:true,
-            ease:'circ.inOut',
+            transition: true,
+            ease: 'circ.inOut',
             onComplete: () => {
               containerRef.current.style.display = 'none';
             },
@@ -151,8 +139,8 @@ const Three = () => {
           gsap.to(containerRef.current, {
             opacity: 1,
             duration: 1,
-            transition:true,
-            ease:'circ.inOut',
+            transition: true,
+            ease: 'circ.inOut',
           });
         }
       }

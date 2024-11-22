@@ -53,19 +53,19 @@ function Navbar() {
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-center bg-black/10 rounded-b-xl backdrop-blur-lg gap-2 md:gap-10 text-white text-base md:text-xl fixed w-full z-50"
+      className="flex items-center justify-center py-4 bg-black/10 rounded-b-xl backdrop-blur-lg gap-3 md:gap-10 text-white text-base md:text-xl fixed w-full z-50"
     >
       {navItems.map((item, index) => (
         <div
           key={index}
-          className="relative magnetic-item group h-16 w-16 flex justify-center items-center transition-transform duration-300"
+          className="relative magnetic-item group flex justify-center items-center transition-transform duration-300"
           onClick={() => handleScroll(refs[item])}
         >
           {/* Circle background animation */}
           <div className="absolute inset-0 bg-white rounded-full scale-0 transition-transform duration-1000 group-hover:scale-100 group-hover:opacity-10 hidden md:block"></div>
 
           {/* Text with hover animation */}
-          <span className="relative z-10 transition-transform duration-1000 group-hover:scale-110 group-hover:-translate-y-1 w-full underline-hover">
+          <span className="relative z-10 transition-transform duration-1000 group-hover:scale-110 group-hover:-translate-y-1 w-full underline-hover text-[12px] md:text-lg">
             {item}
           </span>
         </div>

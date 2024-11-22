@@ -63,7 +63,7 @@ function Home() {
         <Eyes />
       </div>
 
-      <div ref={contactRef} className="section bg-gradient-to-r from-black to-emerald-900 " id='contact'>
+      <div ref={contactRef} className="section bg-gradient-to-r from-black to-emerald-900 z-40" id='contact'>
         <Contact />
       </div>
 
