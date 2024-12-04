@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Three = () => {
   const containerRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const camera = new THREE.PerspectiveCamera(
@@ -23,7 +24,6 @@ const Three = () => {
     loader.load(
       '/models/demon_bee_full_texture.glb',
       (gltf) => {
-        console.log("Model loaded successfully");
         bee = gltf.scene;
         scene.add(bee);
 
@@ -31,13 +31,15 @@ const Three = () => {
         if (gltf.animations.length > 0) {
           mixer.clipAction(gltf.animations[0]).play();
         }
+        setIsLoading(false);
         modelMove();
       },
       (xhr) => {
-        console.log(`Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
+        // console.log(`Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
       },
       (error) => {
         console.error('Error loading model:', error);
+        setIsLoading(false);
       }
     );
 
@@ -160,7 +162,16 @@ const Three = () => {
 
   }, []);
 
-  return <div ref={containerRef} id="container3D" className="fixed inset-0 z-20 transition-opacity duration-1000"></div>;
+  return (
+    <>
+      {isLoading && (
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="text-white text-3xl">Loading Model...</div>
+        </div>
+      )}
+      <div ref={containerRef} id="container3D" className="fixed inset-0 z-20 transition-opacity duration-1000"></div>
+    </>
+  );
 };
 
 export default Three;

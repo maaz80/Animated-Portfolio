@@ -47,11 +47,11 @@ function Home() {
         </div>
       </div>
 
-      <div ref={experienceRef} className="section bg-gradient-to-r from-black to-emerald-900 min-h-screen" id='experience'>
+      <div ref={worksRef} className="section bg-gradient-to-r from-black to-emerald-900 min-h-screen" id='experience'>
         <Experience />
       </div>
 
-      <div ref={worksRef} className="section bg-gradient-to-r from-black to-emerald-900 min-h-screen" id='works'>
+      <div ref={experienceRef} className="section bg-gradient-to-r from-black to-emerald-900 min-h-screen" id='works'>
         <Works />
       </div>
 
@@ -59,7 +59,7 @@ function Home() {
         <Tech />
       </div>
 
-      <div  className="section bg-gradient-to-r from-black to-emerald-900 hidden md:block" id='eyes'>
+      <div className="section bg-gradient-to-r from-black to-emerald-900 hidden md:block" id='eyes'>
         <Eyes />
       </div>
 

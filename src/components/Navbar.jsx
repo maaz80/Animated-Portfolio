@@ -9,8 +9,8 @@ function Navbar() {
   const refs = {
     Home: homeRef,
     About: aboutRef,
-    Experience: experienceRef,
     Works: worksRef,
+    Projects: experienceRef,
     Tech: techRef,
     Contact: contactRef
   };
@@ -33,7 +33,7 @@ function Navbar() {
 
         const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
 
-        const maxDistance = 150; 
+        const maxDistance = 150;
         if (distance < maxDistance) {
           const pullStrength = 1 - distance / maxDistance; // Calculate strength based on proximity
           const offsetX = distanceX * pullStrength * 0.4; // Adjust multiplier for effect

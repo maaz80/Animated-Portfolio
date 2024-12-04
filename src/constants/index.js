@@ -116,7 +116,7 @@ const projects = [
   {
     name: "The Blogzz",
     description:
-      "Under Construction, functional Blog website where anyone can register share there thoughts using images, tags, customized text etc. Used appwrite as backend.",
+      "Developed a fully functional blog website with user registration, posting, liking, and commenting features. It also had a feedback system for users and dashboard for admin.",
     tags: [
       {
         name: "react",
