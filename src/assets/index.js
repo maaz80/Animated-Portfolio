@@ -14,11 +14,13 @@ import ClickCart from "./ClickCart.png";
 import TheBlogzz from "./TheBlogzz.png";
 import MyProps from "./MyProps.png";
 import KhanaDotCom from "./KhanaDotCom.png";
+import ATG from "./ATG.jpg";
 import Appwrite from "./tech/Appwrite.png";
 import NextJs from "./tech/NextJs.png";
 
 export {
   KhanaDotCom,
+  ATG,
   github,
   css,
   figma,

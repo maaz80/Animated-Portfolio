@@ -14,6 +14,7 @@ import {
   MyProps,
   threejs,
   KhanaDotCom,
+  ATG,
   NextJs,
   Appwrite
 } from "../assets";
@@ -76,17 +77,30 @@ const technologies = [
 
 const experiences = [
   {
-    title: "FrontEnd Developer",
+    title: "FrontEnd Developer Intern",
     company_name: "KhanaDotCom",
     icon: KhanaDotCom,
     iconBg: "#064b39",
-    date: "June 2024 - Present",
+    date: "June 2024 - Dec 2024",
     points: [
       "KhanaDotCom is a startup company working on food delivery app.",
-      "We are building the frontend official website of our company.",
+      "We builded the frontend official website of the company.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+  },
+  {
+    title: "Next.js Developer Intern",
+    company_name: "Across the Globe (ATG)",
+    icon: ATG,
+    iconBg: "#064b39",
+    date: "Dec 2024 - Present",
+    points: [
+      "Across the Globe (ATG) is a dynamic startup providing B2B and B2C solutions across various industries.",
+      "We specialize in building scalable and efficient websites tailored to clients' business needs.",
+      "Collaborate with cross-functional teams to deliver high-quality web applications using Next.js and other modern technologies.",
+      "Responsible for optimizing websites for performance, scalability, and user experience.",
+    ],  
   }
 ];
 
