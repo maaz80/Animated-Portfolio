@@ -17,6 +17,8 @@ import KhanaDotCom from "./KhanaDotCom.png";
 import ATG from "./ATG.jpg";
 import Appwrite from "./tech/Appwrite.png";
 import NextJs from "./tech/NextJs.png";
+import Medius from "./Medius.jpeg";
+import Talker from "./Talker.png";
 
 export {
   KhanaDotCom,
@@ -37,5 +39,7 @@ export {
   TheBlogzz,
   MyProps,
   Appwrite,
-  NextJs
+  NextJs,
+  Medius,
+  Talker
 };
