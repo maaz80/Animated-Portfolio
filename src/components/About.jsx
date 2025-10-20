@@ -6,7 +6,7 @@ function About() {
 
       <h2 className="text-lg md:text-4xl font-extrabold mb-6 -mt-4">About Me</h2>
       <p className="text-[10px] md:text-lg mb-4 underline-hover transition-transform duration-1000 ease-in-out">
-        Hello, I'm Maaz Shakeel, a 2024 BCA graduate with expertise as a Software Developer and Frontend Developer. Currently i am working as a NextJs Developer Intern. I am a team player and proficient in creating interactive and responsive designs. I utilize AI to enhance my skills and stay updated with new technologies.
+        Hello, I'm Maaz Shakeel, a 2024 BCA graduate with expertise as a Software Developer and Frontend Developer. I recently completed an internship as a Software Developer at a company. I am a team player and proficient in creating interactive and responsive designs. I utilize AI to enhance my skills and stay updated with new technologies.
       </p>
 
       <p className="text-[10px] md:text-lg mb-4">

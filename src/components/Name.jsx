@@ -38,7 +38,7 @@ const Name = () => {
             Hi, I'm <span className='text-emerald-600 opacity-0' ref={textRef}>Maaz</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100` } >
-            I Am A FrontEnd Developer, worked <br className='sm:block hidden' />
+            I Am A Software Developer, worked <br className='sm:block hidden' />
             with API's, Design and Animations.
           </p>
         </div>

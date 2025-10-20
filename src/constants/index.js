@@ -18,7 +18,10 @@ import {
   NextJs,
   Appwrite,
   Medius,
-  Talker
+  Talker,
+  AK,
+  Supabase,
+  TS
 } from "../assets";
 
 
@@ -34,6 +37,10 @@ const technologies = [
   {
     name: "JavaScript",
     icon: javascript,
+  },
+  {
+    name: "TypeScript",
+    icon: TS,
   },
   {
     name: "Next JS",
@@ -75,6 +82,11 @@ const technologies = [
     name: "Appwrite",
     icon: Appwrite,
   },
+  // {
+  //   name: "Supabase",
+  //   icon: Supabase,
+  // },
+
 ];
 
 const experiences = [
@@ -109,11 +121,23 @@ const experiences = [
     company_name: "Medius Technologies",
     icon: Medius,
     iconBg: "#064b39",
-    date: "Mar 2025 - Present",
+    date: "Mar 2025 - Sep 2025",
     points: [
       "Medius Technology is a IT consultancy specialising in solution architecture, integration, data and cloud.",
       "Build scalable, high-performance websites customized to client business goals and industry needs.",
       "Drive performance optimization, scalability improvements, and seamless user experiences across all web platforms.",
+    ],  
+  },
+  {
+    title: "Software Developer Intern",
+    company_name: "KnockHere Technologies",
+    icon: AK,
+    iconBg: "#064b39",
+    date: "April 2025 - July 2025",
+    points: [
+      "Knock Here Technology is a startup developing a food delivery platform that connects customers with their local food vendors.",
+      "Built a scalable food delivery web application using React and Tailwind CSS for the frontend, with Supabase as the backend service.",
+      "Implemented SQL-based search and filtering to enhance performance, scalability, and provide a seamless user experience across all platforms.",
     ],  
   },
 ];

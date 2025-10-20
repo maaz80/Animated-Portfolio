@@ -19,6 +19,9 @@ import Appwrite from "./tech/Appwrite.png";
 import NextJs from "./tech/NextJs.png";
 import Medius from "./Medius.jpeg";
 import Talker from "./Talker.png";
+import AK from "./AK.png";
+import Supabase from "./Supabase.png";
+import TS from "./TS.png";
 
 export {
   KhanaDotCom,
@@ -41,5 +44,8 @@ export {
   Appwrite,
   NextJs,
   Medius,
-  Talker
+  Talker,
+  AK,
+  Supabase,
+  TS
 };
