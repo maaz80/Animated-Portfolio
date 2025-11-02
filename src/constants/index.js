@@ -129,7 +129,7 @@ const experiences = [
     ],  
   },
   {
-    title: "Software Developer Intern",
+    title: "Web Developer Intern",
     company_name: "KnockHere Technologies",
     icon: AK,
     iconBg: "#064b39",
@@ -140,6 +140,19 @@ const experiences = [
       "Implemented SQL-based search and filtering to enhance performance, scalability, and provide a seamless user experience across all platforms.",
     ],  
   },
+  {
+    title: "Software Development Engineer - 1 (SDE-1)",
+    company_name: "KnockHere Technologies",
+    icon: AK,
+    iconBg: "#064b39",
+    date: "Nov 2025 - Present",
+    points: [
+      "Leading the development and optimization of KnockHere’s food delivery platform connecting customers with local food vendors.",
+      "Architected and maintained scalable web applications using React.js and Tailwind CSS for the frontend, integrated with Supabase backend services.",
+      "Enhanced platform performance by implementing optimized SQL queries for search and filtering, ensuring scalability and seamless user experience across all devices.",
+    ],
+  }
+
 ];
 
 
